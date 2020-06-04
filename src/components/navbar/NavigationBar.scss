@@ -1,0 +1,38 @@
+$hoverColor: #2BDE8C;
+$btnBackground: linear-gradient(to right, #2BDE8C, #78EF50);
+
+.my-navbar{
+    border-bottom: 0.1rem solid rgb(206, 204, 204);
+    height: 10rem;
+}
+
+.my-nav-link{
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: 0.3s all ease-in-out;
+}
+
+.my-nav-link:hover{
+    text-decoration: none;
+    color: $hoverColor;
+}
+
+.sign-up-btn{
+    padding: 1rem 2.9rem;
+    background: $btnBackground;
+    color: white;
+    border-radius: 10rem;
+    transition: 0.3s all ease-in-out;
+}
+
+@media screen and (max-width: 768px){
+    .my-navbar{
+        
+        height: 10%;
+    }
+
+    .sign-up-btn{
+        padding: 0.2rem 1.2rem;
+    }
+}

@@ -3,6 +3,7 @@ import ReactGa from 'react-ga';
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
+import NavigationBar from './components/navbar/NavigationBar';
 
 function App() {
   // useEffect(() => {
@@ -16,7 +17,7 @@ function App() {
   
   return (
     <div className="App">
- 
+      <NavigationBar/>
       
     </div>
   );
