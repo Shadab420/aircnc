@@ -1,9 +1,10 @@
 import React from 'react';
 import './custom-card.scss';
+import StarRating from '../StarRating/StarRating';
 
 const CustomCard = (props) => {
 
-    const { image, caption, title, rent, rating } = props;
+    const { image, caption, title, rent, rating, ratedBy } = props;
 
     return (
         <div class="card-div">
@@ -11,11 +12,7 @@ const CustomCard = (props) => {
             <h6>{caption}</h6>
             <h5>{title}</h5>
             <p>{rent} per person</p>
-            {/* <StarRatings
-                rating={rating}
-                starDimension="40px"
-                starSpacing="15px"
-            /> */}
+            <span><StarRating rating={rating} ratedBy={ratedBy} /></span>
         </div>
     );
 };

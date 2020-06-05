@@ -24,6 +24,7 @@ const SingleReview = () => {
                 title="Discover the city's party scene"
                 rent="35"
                 rating="2.403"
+                ratedBy="274"
             />
         </div>
     );
