@@ -2,13 +2,12 @@ $hoverColor: #2BDE8C;
 $btnBackground: linear-gradient(to right, #2BDE8C, #78EF50);
 
 .my-navbar{
-    border-bottom: 0.1rem solid rgb(206, 204, 204);
-    height: 10rem;
+    border-bottom: 1px solid rgb(206, 204, 204);
+    height: 100px;
 }
 
 .my-nav-link{
     color: black;
-    font-size: 2rem;
     font-weight: bold;
     transition: 0.3s all ease-in-out;
 }
@@ -19,7 +18,7 @@ $btnBackground: linear-gradient(to right, #2BDE8C, #78EF50);
 }
 
 .sign-up-btn{
-    padding: 1rem 2.9rem;
+    padding: 10px 29px;
     background: $btnBackground;
     color: white;
     border-radius: 10rem;
@@ -33,6 +32,6 @@ $btnBackground: linear-gradient(to right, #2BDE8C, #78EF50);
     }
 
     .sign-up-btn{
-        padding: 0.2rem 1.2rem;
+        padding: 2px 12px;
     }
 }

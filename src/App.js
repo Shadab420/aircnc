@@ -4,6 +4,8 @@ import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import NavigationBar from './components/navbar/NavigationBar';
+import Login from './components/Login/Login';
+import Signup from './components/Signup/Signup';
 
 function App() {
   // useEffect(() => {
@@ -18,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <NavigationBar/>
+      
       
     </div>
   );
