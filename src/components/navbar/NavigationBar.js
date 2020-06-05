@@ -8,7 +8,7 @@ import './NavigationBar.scss';
 const NavigationBar = () => {
     return (
         <>
-        <Navbar collapseOnSelect expand="lg" bg="light" className="my-navbar">
+        <Navbar collapseOnSelect expand="lg"  className="my-navbar">
             <Link to="/home" className="mr-auto mx-5">
             <img
                 src= {require('../../assets/images/logo.PNG')}
