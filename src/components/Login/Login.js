@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form'
-import StyledButton from '../utils/StyledButton';
+import StyledButton from '../utils/StyledButton/StyledButton';
 import './Login.scss'
 import { Form, Col, Row } from 'react-bootstrap';
 

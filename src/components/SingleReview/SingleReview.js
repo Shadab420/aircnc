@@ -3,7 +3,7 @@ import './SingleReview.scss';
 import { Card } from 'react-bootstrap';
 import CustomCard from '../utils/custom-card/CustomCard';
 
-const SingleReview = () => {
+const SingleReview = ({title, shortTitle, image, rent, rating, peopleRated}) => {
     return (
         <div>
             {/* <img src={require('../../assets/images/1.jpg')} className=""/> */}
@@ -19,12 +19,12 @@ const SingleReview = () => {
                 {/* </Card.Body> */}
             {/* </Card>} */}
             <CustomCard
-                image={require('../../assets/images/1.jpg')}
-                caption="Nightlife - NewYork"
-                title="Discover the city's party scene"
-                rent="35"
-                rating="2.403"
-                ratedBy="274"
+                image={image}
+                caption={shortTitle}
+                title={title}
+                rent={rent}
+                rating={rating}
+                ratedBy={peopleRated}
             />
         </div>
     );

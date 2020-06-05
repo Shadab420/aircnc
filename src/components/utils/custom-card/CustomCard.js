@@ -11,7 +11,7 @@ const CustomCard = (props) => {
             <img src={image} className="thumbnail" />
             <h6>{caption}</h6>
             <h5>{title}</h5>
-            <p>{rent} per person</p>
+            <p>${rent} per person</p>
             <span><StarRating rating={rating} ratedBy={ratedBy} /></span>
         </div>
     );

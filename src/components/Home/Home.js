@@ -8,7 +8,6 @@ const Home = () => {
     return (
         <div className="home-div">
             <Container fluid>
-            Home Component
             <Row>
                 <Col md={4} sm={12} xs={12}>
                     <SearchHouse/>

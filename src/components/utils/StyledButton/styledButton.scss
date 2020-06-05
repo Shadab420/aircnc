@@ -1,9 +1,11 @@
 $btnBackground: linear-gradient(to right, #2BDE8C, #78EF50);
+$btnWhiteBackground: #fff;
+$blackColor: #000;
 $btnHoverBackground: linear-gradient(to right, rgb(116, 52, 9), rgb(207, 98, 24));
 
 button{
     border: 0;
-    transition: 2s all ease-in-out;
+    transition: 0.5s all ease-in-out;
 }
 
 button:focus{
@@ -21,13 +23,18 @@ button:focus{
 
 .main2{
     padding: 1rem 2.9rem;
-    background: $btnBackground;
-    color: white;
-    border-radius: 10rem;
-    font-size: 2rem;
+    background: $btnWhiteBackground;
+    color: $blackColor;
+    border: 1px solid #2BDE8C;
+    border-radius: 10px;
     font-weight: bold;
 }
 
 .main:hover{
     background: $btnHoverBackground;
+}
+
+.main2:hover{
+    background-color: $blackColor;
+    color: $btnWhiteBackground;
 }
