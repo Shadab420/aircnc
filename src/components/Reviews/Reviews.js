@@ -2,11 +2,15 @@ import React from 'react';
 import SingleReview from '../SingleReview/SingleReview';
 import './Reviews.scss';
 import { Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Reviews = () => {
     return (
         <div>
-            <h3>Experiences</h3>
+            <div className="d-flex justify-content-between">
+                <h3>Experiences</h3>
+                <Link to="/">See all</Link>
+            </div>
             <Row>
                     <Col lg={3} md={6} sm={12} xs={12}>
                         <SingleReview/>
@@ -22,18 +26,21 @@ const Reviews = () => {
                     </Col>
             </Row>
 
-            <h3>Experiences</h3>
+            <div className="d-flex justify-content-between">
+                <h3>Homes</h3>
+                <Link to="/">See all</Link>
+            </div>
             <Row>
-                    <Col md={3} sm={12}>
+            <Col lg={3} md={6} sm={12} xs={12}>
                         <SingleReview/>
                     </Col>
-                    <Col md={3} sm={12}>
+                    <Col lg={3} md={6} sm={12} xs={12}>
                         <SingleReview/>
                     </Col>
-                    <Col md={3} sm={12}>
+                    <Col lg={3} md={6} sm={12} xs={12}>
                         <SingleReview/>
                     </Col>
-                    <Col md={3} sm={12}>
+                    <Col lg={3} md={6} sm={12} xs={12}>
                         <SingleReview/>
                     </Col>
             </Row>
