@@ -14,6 +14,8 @@ import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import Home from './components/Home/Home';
 import Booking from './components/Booking/Booking';
+import Auth, { AuthContextProvider, PrivateRoute  } from './components/Login/useAuth';
+import { auth } from 'firebase';
 
 function App() {
   // useEffect(() => {
@@ -27,7 +29,7 @@ function App() {
   
   
   return (
-    
+    <AuthContextProvider>
     <div className="App">
       <Router>
         <NavigationBar/>
@@ -52,6 +54,7 @@ function App() {
       
       
     </div>
+     </AuthContextProvider>
   );
 }
 

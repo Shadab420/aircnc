@@ -3,10 +3,23 @@ import { useForm } from 'react-hook-form'
 import StyledButton from '../utils/StyledButton/StyledButton';
 import './Signup.scss'
 import { Form, Col, Row } from 'react-bootstrap';
+import Auth from '../Login/useAuth';
 
 const Login = () => {
+    const auth = Auth();
+
     const { register, handleSubmit, watch, errors } = useForm()
-    const onSubmit = data => { console.log(data) }
+    const onSubmit = data => { 
+        const {email, password} = data;
+        auth.signUpWithPassword(email, password)
+            .then(res => {
+                console.log(email, password)
+                window.location.pathname = '/';
+            })
+            .catch(err=>{
+                console.log(email, password)
+            })
+     }
   
     console.log(watch('example')) // watch input value by passing the name of it
 

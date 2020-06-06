@@ -1,14 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form'
 import StyledButton from '../utils/StyledButton/StyledButton';
 import './Login.scss'
 import { Form, Col, Row } from 'react-bootstrap';
+import Auth from './useAuth';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
+    const auth = Auth();
+    const history = useHistory();
     const { register, handleSubmit, watch, errors } = useForm()
-    const onSubmit = data => { console.log(data) }
+    const onSubmit = (data,e) => { 
+        e.preventDefault();
+        
+        const {email, password} = data;
+        handleSignIn(email, password);
+        
+     }
   
     console.log(watch('example')) // watch input value by passing the name of it
+
+    const handleSignIn = (email, password) => {
+        auth.signInWithPassword(email, password)
+            .then(res => {
+                if(res.code !== "auth/user-not-found") history.push('/');
+                // console.log(res.user)
+                else res.status(500).send({message: res.message});
+            })
+            .catch(err=>{
+                console.log(err)
+        })
+
+    }
 
     return (
         <div className="login-div">
@@ -29,7 +52,7 @@ const Login = () => {
                     </Form.Label> */}
                     <Col sm={4}></Col>
                     <Col sm={4}>
-                    <Form.Control name="email" ref={register({ required: true })} placeholder="Email" />
+                    <Form.Control name="email" type="email" ref={register({ required: true })} placeholder="Email" />
                     {errors.email && <span class="form-err">This field is required</span>}
                     </Col>
                     <Col sm={4}></Col>
@@ -41,7 +64,7 @@ const Login = () => {
                     </Form.Label> */}
                     <Col sm={4}></Col>
                     <Col sm={4}>
-                    <Form.Control name="password" ref={register({ required: true })} placeholder="Password" />
+                    <Form.Control name="password" type="password" ref={register({ required: true })} placeholder="Password" />
                     {errors.password && <span class="form-err">This field is required</span>}
                     </Col>
                     <Col sm={4}></Col>
