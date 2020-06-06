@@ -13,6 +13,7 @@ import NavigationBar from './components/navbar/NavigationBar';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import Home from './components/Home/Home';
+import Booking from './components/Booking/Booking';
 
 function App() {
   // useEffect(() => {
@@ -24,7 +25,9 @@ function App() {
 	
   // }, [])
   
+  
   return (
+    
     <div className="App">
       <Router>
         <NavigationBar/>
@@ -35,6 +38,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <Signup />
+          </Route>
+          <Route path="/booking">
+            <Booking />
           </Route>
           <Route path="/">
             <Home />

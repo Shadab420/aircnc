@@ -1,19 +1,26 @@
 import React, { useState } from 'react';
-
 import { Form, Col, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import './SearchHouse.scss';
 import StyledButton from '../utils/StyledButton/StyledButton';
 import Count from '../utils/count/Count';
+import { useHistory, Link } from 'react-router-dom';
+import { gatherSearchHouseInfo } from '../../redux/actions/searchHouseActions';
+import { connect } from 'react-redux';
 
-const SearchHouse = () => {
+const SearchHouse = (props) => {
     const [adults, setAdults] = useState(0);
     const [childs, setChilds ] = useState(0);
     const [babies, setBabies] = useState(0);
     const [guests, setGuests] = useState("");
+    let history = useHistory();
 
     const { register, handleSubmit, watch, errors } = useForm()
-    const onSubmit = data => { console.log(data) }
+    const onSubmit = data => { 
+        props.gatherSearchHouseInfo(data);
+        console.log(props.searchInfo)
+        history.push('/booking');
+    }
 
   
     console.log(watch('example'))
@@ -111,12 +118,21 @@ const SearchHouse = () => {
 
                     
                    
-                    <StyledButton type="submit" btnClass="main" btnText="Search" />
-                    
+                    <StyledButton type="submit" btnClass="main" btnText="Search"/>
                 </Form>
             </div>
         </div>
     );
 };
 
-export default SearchHouse;
+const mapStateToProps = state => {
+    return {
+        searchInfo: state.searchInfo,
+    }
+}
+
+const mapDispatchToProps = {
+    gatherSearchHouseInfo
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchHouse);

@@ -55,7 +55,7 @@ const Reviews = () => {
                 {
                     reviews && reviews.map((review, index) => {
                         return review.category === "experience" && (
-                                <Col lg={3} md={6} sm={12} xs={12}>
+                                <Col lg={4} md={6} sm={12} xs={12}>
                                     <SingleReview 
                                         title={review.title}
                                         shortTitle={review.short_title}

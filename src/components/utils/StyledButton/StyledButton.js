@@ -5,7 +5,7 @@ const StyledButton = (props) => {
     const { btnClass, btnText, onClk, type} = props;
 
     return (
-        <button type={type} className={btnClass} onClick={onClk}>{btnText}</button>
+    <button type={type} className={btnClass} onClick={onClk}>{btnText}</button>
     );
 };
 
