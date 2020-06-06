@@ -12,7 +12,7 @@ const CustomCard = (props) => {
             <h6>{caption}</h6>
             <h5>{title}</h5>
             <p>${rent} per person</p>
-            <span><StarRating rating={rating} ratedBy={ratedBy} /></span>
+            <span><StarRating rating={rating} ratedBy={ratedBy} numberOfStars={5} /></span>
         </div>
     );
 };

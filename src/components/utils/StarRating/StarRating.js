@@ -3,12 +3,12 @@ import { FaStar } from 'react-icons/fa';
 import './StarRating.scss';
 
 
-const StarRating = ({rating, ratedBy}) => {
+const StarRating = ({rating, ratedBy, numberOfStars}) => {
     return (
         <div>
             
             <span className="rated-by">
-                {[...Array(5)].map((star, i) => {
+                {[...Array(numberOfStars)].map((star, i) => {
 
                     const ratingValue = i+1;
                     
